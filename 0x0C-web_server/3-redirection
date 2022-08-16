@@ -5,6 +5,5 @@ sudo apt-get -y install nginx
 cd /var/www/html
 sudo chmod 666 index.nginx-debian.html
 echo "Hello World!" > index.nginx-debian.html
-new="https://www.youtube.com/watch?v=QH2-TGUlwu4&ab_channel=NyanCat"
-sed -i "s/server_name/return 301 $new;/" file
+sed -i '/server_name _;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 sudo service nginx restart
