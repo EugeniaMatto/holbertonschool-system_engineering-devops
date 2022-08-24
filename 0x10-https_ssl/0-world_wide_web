@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Configure your domain
+
+print_subdomain()
+{
+	echo -n "The subdomain "
+	echo -n $sub_domain
+	echo -n " is a "
+	dig "$full_path" | grep -A1 'ANSWER SECTION:' | awk '{ printf $4 }'
+	echo -n " record and points to "
+	dig "$full_path" | grep -A1 'ANSWER SECTION:' | awk '{ printf $5 }'
+	echo ;
+}
+
+# si me pasan solo el dominio
+if [ $# -eq 1 ]
+then
+	array=( www lb-01 web-01 web-02)
+	for i in "${array[@]}"
+	do
+		sub_domain="$i"
+		full_path="$i.$1"
+		print_subdomain
+	done
+else
+#si me pasan subdomain
+	sub_domain=$2
+	full_path="$2.$1"
+	print_subdomain
+fi
