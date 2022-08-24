@@ -22,7 +22,8 @@ then
 		full_path="$i.$1"
 		print_subdomain
 	done
-else
+elif [ $# -eq 2 ]
+then
 #si me pasan subdomain
 	sub_domain=$2
 	full_path="$2.$1"
