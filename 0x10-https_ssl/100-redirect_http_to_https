@@ -1,5 +1,6 @@
 # file /etc/haproxy/haproxy.cfg
 # https://www.digitalocean.com/community/tutorials/how-to-secure-haproxy-with-let-s-encrypt-on-ubuntu-14-04
+# sudo service haproxy restart            <-visualizar cambios
 
 global
 	log /dev/log	local0
