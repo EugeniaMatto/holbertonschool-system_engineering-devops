@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# sobreescribe config de sitios encendidos con la de sites disponibles
+
+cat /etc/nginx/sites-available/default > /etc/nginx/sites-enabled/default
+service nginx restart
