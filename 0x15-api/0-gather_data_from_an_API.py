@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#task 0 :D
 import json
 import requests
 import sys
