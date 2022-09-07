@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-#task 0 :D
+"""task 0 :D"""
+
+""" TASK 0 """
+
+
 import json
 import requests
 import sys
+
+
 if __name__ == "__main__":
     argv = sys.argv
     tot = 0
