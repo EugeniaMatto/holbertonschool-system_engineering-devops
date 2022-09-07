@@ -18,7 +18,7 @@ if __name__ == "__main__":
     lista = []
     for t in res:
         dic = {}
-        dic["task"] = t.get("task")
+        dic["task"] = t.get("title")
         dic["completed"] = t.get("completed")
         dic["username"] = name
         lista.append(dic)
